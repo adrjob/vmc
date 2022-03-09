@@ -25,7 +25,7 @@
                   </div>
                 </div>
                   <label for="Email:"></label>
-                <input type="email" class="form-control" id="exampleEmails" name="email" placeholder="{{ __('Email...') }}" value="{{ old('email', 'admin@white.com') }}" required>
+                <input type="email" class="form-control" id="exampleEmails" name="email" placeholder="{{ __('Email...') }}" required>
               </div>
                 @include('alerts.feedback', ['field' => 'email'])
             </div>
@@ -36,7 +36,7 @@
                     <i class="tim-icons icon-lock-circle"></i>
                   </div>
                 </div>
-                <input type="password" class="form-control" id="examplePassword" name="password" placeholder="{{ __('Password...') }}" value="secret" required>
+                <input type="password" class="form-control" id="examplePassword" name="password" placeholder="{{ __('Password...') }}" required>
               </div>
               @include('alerts.feedback', ['field' => 'password'])
             </div>
