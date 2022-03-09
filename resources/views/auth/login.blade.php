@@ -8,37 +8,15 @@
 @section('content')
 <div class="content">
   <div class="container">
-    <div class="row">
-      <div class="col-md-9 ml-auto mr-auto mb-1 text-center">
-        <h3>{{ __('Welcome to White Dashboard Pro Laravel Live Preview.') }} </h3>
-
-        <p class="text-lead text-light mt-3 mb-0">
-            {{ __('Log in and see how you can save more than 150 hours of work with CRUDs for managing: #users, #roles, #items, #categories, #tags and more.') }}
-        </p>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-5 col-md-8 col-sm-10 ml-auto mr-auto mb-3 text-center">
-          <h5 class="text-lead mt-2 mb-0">
-              <strong>{{ __('You can log in with 3 user types:') }}</strong>
-          </h5>
-          <ol class="text-lead text-light mt-3 mb-3">
-              <li>{!! __('Username <b>admin@white.com</b> Password <b>secret</b>') !!}</li>
-              <li>{!! __('Username <b>creator@white.com</b> Password <b>secret</b>') !!}</li>
-              <li>{!! __('Username <b>member@white.com</b> Password <b>secret</b>') !!}</li>
-          </ol>
-      </div>
-    </div>
     <div class="col-lg-4 col-md-6 ml-auto mr-auto">
       <form class="form" id ="login-form" method="POST" action="{{ route('login') }}">
         @csrf
-        
-        <div class="card card-login card-white">
-          <div class="card-header">
-            <img src="{{ asset("white") }}/img/card-primary.png" alt="">
-            <h1 class="card-title">{{ __('Log in') }}</h1>
+
+        <div class="card card-login card-white" style="margin-top: 20%">
+          <div class="card-header" style="padding: 0 !important;">
+            <h1 class="card-title" style="color: #4a4b52; font-family: Arial; font-size: 26px; text-transform: initial !important; text-align: center; padding-top: 10px">{{ __('Log in') }}</h1>
           </div>
-          <div class="card-body">
+          <div class="card-body" style="padding-bottom: 0 !important;">
             <div class="form-group mb-0 {{ $errors->has('email') ? ' has-danger' : '' }}">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -46,6 +24,7 @@
                     <i class="tim-icons icon-email-85"></i>
                   </div>
                 </div>
+                  <label for="Email:"></label>
                 <input type="email" class="form-control" id="exampleEmails" name="email" placeholder="{{ __('Email...') }}" value="{{ old('email', 'admin@white.com') }}" required>
               </div>
                 @include('alerts.feedback', ['field' => 'email'])
@@ -62,7 +41,7 @@
               @include('alerts.feedback', ['field' => 'password'])
             </div>
           </div>
-          <div class="card-footer">
+          <div class="card-footer" style="padding-top: 0 !important;">
             <a href="#" onclick="event.preventDefault();
             document.getElementById('login-form').submit();" class="btn btn-primary btn-lg btn-block mb-3">{{ __('Get started') }}</a>
             <div class="pull-left">
@@ -72,13 +51,6 @@
                     <small>{{ __('Forgot password?') }}</small>
                   </a>
                 @endif
-              </h6>
-            </div>
-            <div class="pull-right">
-              <h6>
-                <a href="{{ route('register') }}" class="text-light">
-                    <small>{{ __('Create new account') }}</small>
-                </a>
               </h6>
             </div>
           </div>
