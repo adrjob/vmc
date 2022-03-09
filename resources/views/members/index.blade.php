@@ -30,7 +30,7 @@
                     </thead>
                     <tbody>
                       @foreach($members as $member)
-                        @if(!auth()->user()->isAdmin() & auth()->user()->id == $member->user_id)
+                        @if(auth()->user()->id == $member->user_id & auth()->user()->role_id != 1)
                         <tr>
                           <td>
                             {{ $member->name }}
@@ -50,18 +50,20 @@
                               </form>
                           </td>
                         </tr>
-                        @else
-                        <tr>
-                            <td>
-                                {{ $member->name }}
-                            </td>
-                            <td>
-                                {{ $member->created_at->format('Y-m-d') }}
-                            </td>
-                            <td class="text-right">
-                                <form action="{{ route('member.destroy', $member) }}" method="post">
-                                    @csrf
-                                    @method('delete')
+                        @endif
+
+                        @if(auth()->user()->role_id == 1)
+                            <tr>
+                                <td>
+                                    {{ $member->name }}
+                                </td>
+                                <td>
+                                    {{ $member->created_at->format('Y-m-d') }}
+                                </td>
+                                <td class="text-right">
+                                    <form action="{{ route('member.destroy', $member) }}" method="post">
+                                        @csrf
+                                        @method('delete')
 
 
                                         <a href="{{ route('member.edit', $member) }}" class="btn btn-link btn-primary btn-icon btn-sm edit"><i class="tim-icons icon-pencil"></i></a>
@@ -71,9 +73,9 @@
                                             <i class="tim-icons icon-simple-remove"></i>
                                         </button>
 
-                                </form>
-                            </td>
-                        </tr>
+                                    </form>
+                                </td>
+                            </tr>
                         @endif
                       @endforeach
                     </tbody>
