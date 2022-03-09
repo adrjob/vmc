@@ -8,7 +8,7 @@
         <form method="post" enctype="multipart/form-data" action="{{ route('profile.update') }}" autocomplete="off">
           @csrf
           @method('put')
-          
+
           <div class="card-header">
             <h5 class="title">{{ __('Edit Profile') }}</h5>
           </div>
@@ -61,7 +61,7 @@
           </div>
         </form>
       </div>
-    
+
       <div class="card">
         <div class="card-header">
           <h5 class="card-title">{{ __('Change password') }}</h5>
@@ -100,43 +100,6 @@
             <button type="submit" class="btn btn-primary pull-right">{{ _('Change password') }}</button>
             <div class="clearfix"></div>
           </form>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card card-user">
-        <div class="card-body">
-          <p class="card-text">
-            <div class="author">
-              <div class="block block-one"></div>
-              <div class="block block-two"></div>
-              <div class="block block-three"></div>
-              <div class="block block-four"></div>
-              <a href="javascript:void(0)">
-                <img class="avatar" src="{{ auth()->user()->profilePicture() }}">
-                <h5 class="title">{{ auth()->user()->name }}</h5>
-              </a>
-              <p class="description">
-                {{ __('Ceo/Co-Founder') }}
-              </p>
-            </div>
-          </p>
-          <div class="card-description">
-            {{ __('Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...') }}
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="button-container">
-            <button href="javascript:void(0)" class="btn btn-icon btn-round btn-facebook">
-              <i class="fab fa-facebook"></i>
-            </button>
-            <button href="javascript:void(0)" class="btn btn-icon btn-round btn-twitter">
-              <i class="fab fa-twitter"></i>
-            </button>
-            <button href="javascript:void(0)" class="btn btn-icon btn-round btn-google">
-              <i class="fab fa-google-plus"></i>
-            </button>
-          </div>
         </div>
       </div>
     </div>
