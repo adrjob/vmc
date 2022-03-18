@@ -19,6 +19,14 @@ class MemberController extends Controller
         return view('members.index', compact('members'));
     }
 
+
+    public function adminView($id)
+    {
+        $members = Member::where('user_id', $id)->get();
+
+        return view('members.list', compact('members'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -93,6 +101,7 @@ class MemberController extends Controller
             return redirect()->back()->withStatus('Member has been updated');
         }
     }
+
 
     /**
      * Remove the specified resource from storage.

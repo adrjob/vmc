@@ -57,6 +57,7 @@
   <title>
     Vanuatu Muslim Center
   </title>
+
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -178,8 +179,7 @@
 
 
 
-        <!--   Core JS Files   -->
-        <script src="{{ asset('white') }}/js/core/jquery.min.js"></script>
+
 
         <!--   Core JS Files   -->
         <script src="{{ asset('white') }}/js/core/jquery.min.js"></script>
@@ -226,6 +226,7 @@
         <script src="{{ asset('white') }}/demo/demo.js"></script>
         <script src="{{ asset('white') }}/js/settings.js"></script>
         <script src="{{ asset('white') }}/demo/jquery.sharrre.js"></script>
+
         <script>
           $(document).ready(function () {
             @if (session('status'))
@@ -305,6 +306,7 @@
               template: '<i class="fab fa-twitter"></i> Twitter',
               url: 'https://white-dashboard-pro-laravel.creative-tim.com/login'
             });
+
           });
         </script>
         @stack('js')

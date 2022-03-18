@@ -1,0 +1,24 @@
+{
+  "name": "azkar",
+  "version": "1.0.1",
+  "description": "Package to get Islamic azkar and supplications  easily",
+  "keywords": [
+    "azkar",
+    "islamic",
+    "اذكار",
+    "أدعية",
+    "supplications",
+    "prayer",
+    "muslim",
+    "remembrances"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "shuruhatik",
+  "license": "CC BY-NC-ND 4.0"
+}

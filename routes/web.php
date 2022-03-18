@@ -25,9 +25,14 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::get('dashboard', 'HomeController@index')->name('home');
 Route::get('pricing', 'ExamplePagesController@pricing')->name('page.pricing');
 Route::get('lock', 'ExamplePagesController@lock')->name('page.lock');
+Route::get('hiriji', 'HomeController@hiriji')->name('hiriji');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('member', 'MemberController');
+    Route::get('member/list/{id}', 'MemberController@adminView')->name('member.list');
+    Route::resource('events', 'EventsController');
+    Route::resource('meetings', 'MeetingsController');
+    Route::post('events/update/{id}', 'EventsController@update')->name('events.update');
 
     Route::resource('category', 'CategoryController', ['except' => ['show']]);
     Route::resource('tag', 'TagController', ['except' => ['show']]);

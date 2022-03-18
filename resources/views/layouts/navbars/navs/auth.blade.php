@@ -24,6 +24,31 @@
     </button>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="navbar-nav ml-auto">
+         <li style="margin-top: 15px">
+
+
+             <div id="my-date"></div>
+             <script>
+                 function myHijriDateFormat(date) {
+                     let startDate= new Date(date),
+                         c= 'en-u-ca-islamic-umalqura-nu-latn',  // use 'islamic-umalqura' calendar for the islamic date
+                         n='numeric',
+                         iDay  =new Intl.DateTimeFormat(c,{day  :n}).format(startDate),
+                         iMonth=new Intl.DateTimeFormat(c,{month:'long'}).format(startDate),
+                         iYear =new Intl.DateTimeFormat(c,{year :n}).format(startDate).split(" ")[0];
+
+                     var tt = iDay+" "+iMonth+", "+iYear;
+
+                     var div = document.getElementById('my-date');
+
+                     div.innerHTML +=  iDay+" "+iMonth+", "+iYear;
+                 }
+                 myHijriDateFormat(Date.now());
+
+                 // console.log(myHijriDateFormat(new Date(Date.now()))); // today's date
+                 // console.log(myHijriDateFormat("2022-04-02"));         // first Ramadan 2022
+             </script>
+         </li>
 
         <li class="dropdown nav-item">
           <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -50,16 +75,29 @@
     </div>
   </div>
 </nav>
-<div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="{{ __('SEARCH') }}">
-        <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('Close') }}">
-          <i class="tim-icons icon-simple-remove"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" integrity="sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" integrity="sha512-okE4owXD0kfXzgVXBzCDIiSSlpXn3tJbNodngsTnIYPJWjuYhtJ+qMoc0+WUwLHeOwns0wm57Ka903FqQKM1sA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdn.jsdelivr.net/gh/xsoh/Hijri.js/Hijri.js"></script>
+<script>
+
+    jQuery(function($){
+        $("#my-date").click(function () {
+            $( "#my-date" ).datepicker({
+                changeMonth: true, // show months menu
+                changeYear: true, // show years menu
+                dayNamesMin: [ "س", "ج", "خ", "ر", "ث", "ن", "ح" ], // arabic days names
+                dateFormat: "dd-mm-yy", // set format to dd-mm-yyyy
+                monthNames: [ "محرم", "صفر", "ربيع الأول", "ربيع الثاني", "جمادى الأول", "جمادى الثاني", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة" ],
+                yearRange: "c-0:c+15", // year range in Hijri from current year and +15 years
+                monthNamesShort: [ "محرم", "صفر", "ربيع ١", "ربيع ٢", "جمادى ١", "جمادى ٢", "رجب", "شعبان", "رمضان", "شوال", "ذو القعدة", "ذو الحجة" ],
+                showAnim: 'bounce'
+            });
+        });
+    })(jQuery)
+</script>
+
 <!-- End Navbar -->

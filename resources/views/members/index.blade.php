@@ -42,6 +42,7 @@
                               <form action="{{ route('member.destroy', $member) }}" method="post">
                                   @csrf
                                   @method('delete')
+
                                   <a href="{{ route('member.edit', $member) }}" class="btn btn-link btn-primary btn-icon btn-sm edit"><i class="tim-icons icon-pencil"></i></a>
 
                                   <button type="button" class="btn btn-link btn-danger btn-icon btn-sm remove" data-original-title="" title="" onclick="confirm('{{ __("Are you sure you want to delete this member?") }}') ? this.parentElement.submit() : ''">
@@ -65,7 +66,7 @@
                                         @csrf
                                         @method('delete')
 
-
+                                        <a href="{{ route('events.edit', $member->id) }}" class="btn btn-link btn-primary btn-icon btn-sm edit" target="_blank"><i class="tim-icons icon-notes"></i></a>
                                         <a href="{{ route('member.edit', $member) }}" class="btn btn-link btn-primary btn-icon btn-sm edit"><i class="tim-icons icon-pencil"></i></a>
 
 

@@ -38,4 +38,9 @@ class HomeController extends Controller
     {
         return view('pages.dashboard');
     }
+
+    public function hiriji()
+    {
+        return view('hiriji.index');
+    }
 }

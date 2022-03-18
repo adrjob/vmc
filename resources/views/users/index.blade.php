@@ -67,14 +67,14 @@
                           <td>
                             {{ $user->created_at->format('Y-m-d') }}
                           </td>
-                          @can('manage-users', App\User::class)
+
                             <td class="td-actions text-right">
                                 @if ($user->id != auth()->user()->id)
                                   <form action="{{ route('user.destroy', $user) }}" method="post">
                                       @csrf
                                       @method('delete')
-
                                       @can('update', $user)
+                                          <a href="{{ route('member.list', $user) }}" class="btn btn-link btn-primary btn-icon btn-sm edit"><i class="tim-icons icon-notes"></i></a>
                                         <a href="{{ route('user.edit', $user) }}" class="btn btn-link btn-primary btn-icon btn-sm edit"><i class="tim-icons icon-pencil"></i></a>
                                       @endcan
                                       @can('delete', $user)
@@ -84,10 +84,10 @@
                                       @endcan
                                   </form>
                               @else
+                                    <a href="{{ route('member.list', $user) }}" class="btn btn-link btn-primary btn-icon btn-sm edit"><i class="tim-icons icon-notes"></i></a>
                                 <a href="{{ route('profile.edit') }}" class="btn btn-link btn-primary btn-icon btn-sm edit"><i class="tim-icons icon-pencil"></i></a>
                               @endif
                             </td>
-                          @endcan
                         </tr>
                       @endforeach
                     </tbody>

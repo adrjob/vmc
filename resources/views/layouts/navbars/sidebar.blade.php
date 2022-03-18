@@ -31,6 +31,12 @@
                 <p>{{ __('Members') }}</p>
             </a>
         </li>
+        <li class="{{$menuParent == "Meeting" || $activePage == 'Meeting' ? ' active' : '' }}">
+            <a href="{{ route('meetings.index') }}">
+                <i class="tim-icons icon-istanbul"></i>
+                <p>{{ __('Meetings') }}</p>
+            </a>
+        </li>
       @endif
       <li class="{{ ($menuParent == 'laravel' || $activePage == 'dashboard') ? ' active' : '' }}">
         <a data-toggle="collapse" href="#laravelExamples" >
