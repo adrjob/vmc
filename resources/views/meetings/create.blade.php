@@ -31,7 +31,7 @@
                                 <div class="row">
                                     <label class="col-sm-2 col-form-label">{{ __('Date') }}</label>
                                     <div class="col-sm-7">
-                                        <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                        <div class="form-group{{ $errors->has('m_date') ? ' has-danger' : '' }}">
                                             <input class="form-control{{ $errors->has('m_date') ? ' is-invalid' : '' }}" name="m_date" id="input-name" type="datetime-local" placeholder="{{ __('Date') }}" value="{{ old('m_date') }}" />
                                             @include('alerts.feedback', ['field' => 'm_date'])
                                         </div>

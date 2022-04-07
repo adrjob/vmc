@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Meetings;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class MeetingsController extends Controller
 {
@@ -36,16 +37,21 @@ class MeetingsController extends Controller
      */
     public function store(Request $request)
     {
+        $m_date = Carbon::parse($request->m_date)->format('Y-m-d H:i:s');
+
+
         $m_owner = auth()->user()->id;
 
         $data = new Meetings;
 
         $data->m_name = $request->m_name;
         $data->m_owner = $m_owner;
-        $data->m_date = $request->m_date;
+        $data->m_date = $m_date;
+
+
 
         if($data->save()) {
-            return redirect()->back()->withStatus();
+            return redirect()->route('meetings.index')->withStatus(__('Meeting successfully created.'));
         }
 
 

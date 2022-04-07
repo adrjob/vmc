@@ -16,7 +16,7 @@ class AlterTableMeeting extends Migration
         Schema::table('meetings', function (Blueprint $table) {
             $table->string("m_name");
             $table->string("m_owner");
-            $table->date('m_date')->nullable();
+            $table->dateTime('m_date')->nullable();
             $table->longText("m_desc")->nullable();
         });
     }

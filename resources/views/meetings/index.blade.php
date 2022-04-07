@@ -21,7 +21,7 @@
                                 <table id="datatables" class="table table-striped table-no-bordered table-hover" style="display:none">
                                     <thead class="text-primary">
                                     <th>
-                                        {{ __('ID') }}
+                                        {{ __('Name') }}
                                     </th>
                                     <th>
                                         {{ __('Created At') }}
@@ -31,10 +31,10 @@
                                     @foreach($meetings as $meeting)
                                         <tr>
                                             <td>
-                                                {{ $meeting->id }}
+                                                {{ $meeting->m_name }}
                                             </td>
                                             <td>
-                                                {{ $meeting->created_at }}
+                                                {{ $meeting->m_date }}
                                             </td>
                                         </tr>
                                     @endforeach
