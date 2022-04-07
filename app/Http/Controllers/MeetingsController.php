@@ -36,7 +36,20 @@ class MeetingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $m_owner = auth()->user()->id;
+
+        $data = new Meetings;
+
+        $data->m_name = $request->m_name;
+        $data->m_owner = $m_owner;
+        $data->m_date = $request->m_date;
+
+        if($data->save()) {
+            return redirect()->back()->withStatus();
+        }
+
+
+
     }
 
     /**

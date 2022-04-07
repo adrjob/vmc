@@ -13,7 +13,7 @@
                             @can('create', App\User::class)
                                 <div class="row">
                                     <div class="col-12 text-right mb-3">
-                                        <a href="{{ route('user.create') }}" class="btn btn-sm btn-primary">{{ __('Add Meeting') }}</a>
+                                        <a href="{{ route('meetings.create') }}" class="btn btn-sm btn-primary">{{ __('Add Meeting') }}</a>
                                     </div>
                                 </div>
                             @endcan
