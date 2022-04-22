@@ -23,9 +23,9 @@
       <span class="navbar-toggler-bar navbar-kebab"></span>
     </button>
     <div class="collapse navbar-collapse" id="navigation">
+        <img src="{{ asset("white") }}/img/favicon.png" style="width: 5%; margin-left: 38%;">
       <ul class="navbar-nav ml-auto">
          <li style="margin-top: 15px">
-
 
              <div id="my-date"></div>
              <script>
