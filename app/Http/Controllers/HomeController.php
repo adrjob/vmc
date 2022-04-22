@@ -17,6 +17,8 @@
 */
 namespace App\Http\Controllers;
 
+use App\Member;
+
 class HomeController extends Controller
 {
     /**
@@ -36,7 +38,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard');
+//        return view('pages.dashboard');
+        $members = Member::all();
+
+        return view('members.index', compact('members'));
     }
 
     public function hiriji()

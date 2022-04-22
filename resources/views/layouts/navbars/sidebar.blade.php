@@ -4,7 +4,7 @@
     <i class="tim-icons icon-bullet-list-67 visible-on-sidebar-mini text-muted"></i>
   </button>
 </div>
-<div class="sidebar" data="blue">
+<div class="sidebar" data="green">
   <!--
     Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
 -->
@@ -54,19 +54,19 @@
                 <span class="sidebar-normal"> {{ __('User profile') }} </span>
               </a>
             </li>
-            @can('manage-users', App\User::class)
-            <li class="{{ $activePage == 'role-management' ? ' active' : '' }}">
-              <a href="{{ route('role.index') }}">
-                <span class="sidebar-mini-icon">RM</span>
-                <span class="sidebar-normal"> {{ __('Role Management') }} </span>
-              </a>
-            </li>
-            @endcan
+{{--            @can('manage-users', App\User::class)--}}
+{{--            <li class="{{ $activePage == 'role-management' ? ' active' : '' }}">--}}
+{{--              <a href="{{ route('role.index') }}">--}}
+{{--                <span class="sidebar-mini-icon">RM</span>--}}
+{{--                <span class="sidebar-normal"> {{ __('Role Management') }} </span>--}}
+{{--              </a>--}}
+{{--            </li>--}}
+{{--            @endcan--}}
             @can('manage-users', App\User::class)
             <li class="{{ $activePage == 'user-management' ? ' active' : '' }}">
               <a href="{{ route('user.index') }}">
                 <span class="sidebar-mini-icon">UM</span>
-                <span class="sidebar-normal"> {{ __('User Management') }} </span>
+                <span class="sidebar-normal"> {{ __('Supervisor Management') }} </span>
               </a>
             </li>
             @endcan

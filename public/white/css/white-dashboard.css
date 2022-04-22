@@ -12904,6 +12904,15 @@ fieldset[disabled] .btn-link.active {
   right: 8px;
 }
 
+
+.btn {
+    border-width: 1px !important;
+    border-radius: 30px !important;
+}
+.btn.btn-simple {
+    padding: 10px 22px !important;
+}
+
 .btn-round {
   border-width: 1px;
   border-radius: 30px;

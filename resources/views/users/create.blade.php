@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'user-management', 'menuParent' => 'laravel', 'titlePage' => __('User Management')])
+@extends('layouts.app', ['activePage' => 'user-management', 'menuParent' => 'laravel', 'titlePage' => __('Supervisor')])
 
 @section('content')
 <div class="content">
@@ -11,12 +11,12 @@
 
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title">{{ __('Add User') }}</h4>
+                <h4 class="card-title">{{ __('Add Supervisor') }}</h4>
               </div>
               <div class="card-body ">
                 <div class="row">
                   <div class="col-md-12 text-right">
-                      <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                      <a href="{{ route('user.index') }}" class="btn btn-round btn-sm btn-primary">{{ __('Back to list') }}</a>
                   </div>
                 </div>
                 <div class="row">
@@ -77,6 +77,8 @@
                       <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" input type="password" name="password" id="input-password" placeholder="{{ __('Password') }}" />
                       @include('alerts.feedback', ['field' => 'password'])
                     </div>
+                      <span>Minimum Length 6</span> / <span> Charterer</span> / <span> Number</span>
+                      <br> <br>
                   </div>
                 </div>
                 <div class="row">
@@ -89,7 +91,7 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn">{{ __('Add User') }}</button>
+                <button type="submit" class="btn btn-round btn-primary">{{ __('Add Supervisor') }}</button>
               </div>
             </div>
           </form>

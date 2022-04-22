@@ -26,7 +26,7 @@
                   </div>
                   <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
                   <div>
-                    <span class="btn btn-round btn-rose btn-file">
+                    <span class="btn btn-round btn-primary btn-file">
                       <span class="fileinput-new">{{ __('Add Photo') }}</span>
                       <span class="fileinput-exists">{{ __('Change') }}</span>
                       <input type="file" name="photo" id = "input-picture"/>
@@ -56,7 +56,7 @@
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary pull-right">{{ _('Update Profile') }}</button>
+            <button type="submit" class="btn btn-round btn-primary pull-right">{{ _('Update Profile') }}</button>
             <div class="clearfix"></div>
           </div>
         </form>
@@ -97,7 +97,7 @@
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary pull-right">{{ _('Change password') }}</button>
+            <button type="submit" class="btn btn-round btn-primary pull-right">{{ _('Change password') }}</button>
             <div class="clearfix"></div>
           </form>
         </div>

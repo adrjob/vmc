@@ -12,7 +12,7 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col-12 text-right mb-3">
-                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#NewMemberModal">{{ __('Add Member') }}</button>
+                    <button class="btn btn-round btn-sm btn-primary" data-toggle="modal" data-target="#NewMemberModal">{{ __('Add Member') }}</button>
                   </div>
                 </div>
                 <div class="table-responsive">
@@ -107,8 +107,8 @@
                   <input id="name" type="text" name="name" style="width: 100%">
               </div>
               <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-round btn-danger btn-sm" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-round btn-primary btn-sm">Save changes</button>
               </div>
           </div>
       </div>
@@ -127,14 +127,10 @@
           [10, 25, 50, -1],
           [10, 25, 50, "All"]
         ],
-        responsive: true,
         language: {
           search: "_INPUT_",
           searchPlaceholder: "Search users",
         },
-        "columnDefs": [
-          { "orderable": false, "targets": 5 },
-        ],
       });
     });
   </script>

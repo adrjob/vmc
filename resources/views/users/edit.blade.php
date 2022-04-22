@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'user-management', 'menuParent' => 'laravel', 'titlePage' => __('User Management')])
+@extends('layouts.app', ['activePage' => 'user-management', 'menuParent' => 'laravel', 'titlePage' => __('Supervisor')])
 
 @section('content')
   <div class="content">
@@ -11,12 +11,12 @@
 
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title">{{ __('Edit User') }}</h4>
+                <h4 class="card-title">{{ __('Supervisor Profile') }}</h4>
               </div>
               <div class="card-body ">
                 <div class="row">
                   <div class="col-md-12 text-right">
-                      <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                      <a href="{{ route('user.index') }}" class="btn btn-round btn-sm btn-primary">{{ __('Back to list') }}</a>
                   </div>
                 </div>
                 <div class="row">
@@ -32,12 +32,12 @@
                       </div>
                       <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
                       <div>
-                        <span class="btn btn-file">
+                        <span class="btn btn-round btn-file">
                           <span class="fileinput-new">{{ __('Select image') }}</span>
                           <span class="fileinput-exists">{{ __('Change') }}</span>
                           <input type="file" name="photo" id = "input-picture" />
                         </span>
-                          <a href="#pablo" class="btn btn-danger fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> {{ __('Remove') }}</a>
+                          <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> {{ __('Remove') }}</a>
                       </div>
                       @include('alerts.feedback', ['field' => 'photo'])
                     </div>
@@ -93,7 +93,7 @@
                 </div>
               </div>
               <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn">{{ __('Save') }}</button>
+                <button type="submit" class="btn btn-round">{{ __('Save') }}</button>
               </div>
             </div>
           </form>

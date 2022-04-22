@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\AddParticipant;
 use App\Meetings;
+use App\Member;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 
 class MeetingsController extends Controller
@@ -11,7 +15,7 @@ class MeetingsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -22,7 +26,7 @@ class MeetingsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -33,7 +37,7 @@ class MeetingsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -61,45 +65,70 @@ class MeetingsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Meetings  $meetings
-     * @return \Illuminate\Http\Response
+     * @param Meetings $meetings
+     * @return Response
      */
-    public function show(Meetings $meetings)
+    public function show(Meetings $meeting)
     {
-        //
+        $auth_all = auth()->user()->id;
+        $members = Member::where('user_id', $auth_all)->get();
+        $participants = AddParticipant::where('m_id', $meeting->id)->get();
+        return view("meetings.show", compact("meeting", "members", "participants"));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Meetings  $meetings
-     * @return \Illuminate\Http\Response
+     * @param Meetings $meetings
+     * @return Response
      */
-    public function edit(Meetings $meetings)
+    public function edit(Meetings $meeting)
     {
-        //
+        return view('meetings.edit', compact('meeting'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Meetings  $meetings
-     * @return \Illuminate\Http\Response
+     * @param Meetings $meetings
+     * @return Response
      */
-    public function update(Request $request, Meetings $meetings)
+    public function update(Request $request, Meetings $meeting)
     {
-        //
+        $data = $meeting;
+
+        $data->m_name = $request->m_name;
+        $data->m_desc = $request->m_desc;
+        $data->m_date = $request->m_date;
+
+        if ($data->save()) {
+            return redirect()->back()->withStatus(__('Meeting successfully updated.'));
+        }
+    }
+
+    public function addP(Request $request)
+    {
+        $data = new AddParticipant;
+
+        $data->m_id = $request->m_id;
+        $data->m_member_id = $request->m_member_id;
+
+        if ($data->save) {
+            return redirect()->back()->withStatus(__('Participant successfully added.'));
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Meetings  $meetings
-     * @return \Illuminate\Http\Response
+     * @param Meetings $meetings
+     * @return Response
+     * @throws Exception
      */
-    public function destroy(Meetings $meetings)
+    public function destroy(Meetings $meeting)
     {
-        //
+        $meeting->delete();
+        return redirect()->route('meetings.index')->withStatus(__('Meeting successfully deleted.'));
     }
 }

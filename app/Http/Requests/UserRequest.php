@@ -37,7 +37,10 @@ class UserRequest extends FormRequest
                 'required', 'exists:'.(new Role)->getTable().',id'
             ],
             'password' => [
-                $this->route()->user ? 'required_with:password_confirmation' : 'required', 'nullable', 'confirmed', 'min:6'
+                $this->route()->user ? 'required_with:password_confirmation' : 'required', 'nullable', 'confirmed', 'min:6',
+                'regex:/[a-z]/',
+                'regex:/[0-9]/',
+                'regex:/[@$!%*#?&]/',
             ],
         ];
     }

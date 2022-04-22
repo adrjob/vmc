@@ -16,7 +16,7 @@
                             <div class="card-body ">
                                 <div class="row">
                                     <div class="col-md-12 text-right">
-                                        <a href="{{ route('meetings.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                                        <a href="{{ route('meetings.index') }}" class="btn btn-round btn-sm btn-primary">{{ __('Back to list') }}</a>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="card-footer ml-auto mr-auto">
-                                <button type="submit" class="btn btn-primary">{{ __('Add Meeting') }}</button>
+                                <button type="submit" class="btn btn-round btn-primary">{{ __('Add Meeting') }}</button>
                             </div>
                         </div>
                     </form>

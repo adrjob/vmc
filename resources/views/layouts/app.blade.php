@@ -18,6 +18,23 @@
 <html lang="en">
 
 <head>
+    <style>
+        .sidebar[data="green"], .off-canvas-sidebar[data="blue"] {
+            background: #23aa4d;
+            background: -webkit-linear-gradient( 0deg, #0098f0 0%, #00f2c3 100%);
+            background: -o-linear-gradient(0deg, #0098f0 0%, #00f2c3 100%);
+            background: -moz-linear-gradient(0deg, #0098f0 0%, #00f2c3 100%);
+            background: linear-gradient( 0deg, #23aa4d 0%, #23aa4d 100%);
+        }
+
+        .white-content .table>thead>tr>th, .white-content .table>tbody>tr>th, .white-content .table>tfoot>tr>th, .white-content .table>thead>tr>td, .white-content .table>tbody>tr>td, .white-content .table>tfoot>tr>td {
+            border-color: rgba(34, 42, 66, 0.2);
+            padding: 12px 7px;
+            vertical-align: middle;
+            padding: 0px !important;
+        }
+
+    </style>
     @if (env('IS_DEMO'))
       <!-- Anti-flicker snippet (recommended)  -->
     <style>.async-hide { opacity: 0 !important} </style>

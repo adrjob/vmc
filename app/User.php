@@ -63,8 +63,7 @@ class User extends Authenticatable
         if ($this->picture) {
             return "/storage/{$this->picture}";
         }
-
-        return 'http://i.pravatar.cc/200';
+        return asset('white')."/img/favicon.png";
     }
 
     public function getRank()

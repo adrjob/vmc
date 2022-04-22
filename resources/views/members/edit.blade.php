@@ -20,7 +20,7 @@
               <div class="card-body ">
                 <div class="row">
                   <div class="col-md-12 text-right">
-                      <a href="{{ route('member.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                      <a href="{{ route('member.index') }}" class="btn btn-round btn-sm btn-primary">{{ __('Back to list') }}</a>
                   </div>
                 </div>
                 <div class="row">
@@ -36,7 +36,7 @@
 {{--                      </div>--}}
                       <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
                       <div>
-                        <span class="btn btn-file btn-sm btn-primary">
+                        <span class="btn btn-round btn-file btn-sm btn-primary">
                           <span class="fileinput-new">{{ __('Select image') }}</span>
                           <span class="fileinput-exists">{{ __('Change') }}</span>
                           <input type="file" name="photo" id = "input-picture" />
@@ -85,7 +85,7 @@
 
               </div>
               <div class="card-footer ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+                <button type="submit" class="btn btn-round btn-primary">{{ __('Save') }}</button>
               </div>
             </div>
           </form>

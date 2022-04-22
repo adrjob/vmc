@@ -1,4 +1,4 @@
-@extends('layouts.app', ['activePage' => 'user-management', 'menuParent' => 'laravel', 'titlePage' => __('User Management')])
+@extends('layouts.app', ['activePage' => 'user-management', 'menuParent' => 'laravel', 'titlePage' => __('Supervisor')])
 
 @section('content')
   <div class="content">
@@ -7,13 +7,13 @@
         <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">{{ __('Users') }}</h4>
+                <h4 class="card-title">{{ __('Supervisor') }}</h4>
               </div>
               <div class="card-body">
                 @can('create', App\User::class)
                   <div class="row">
                     <div class="col-12 text-right mb-3">
-                      <a href="{{ route('user.create') }}" class="btn btn-sm btn-primary">{{ __('Add user') }}</a>
+                      <a href="{{ route('user.create') }}" class="btn btn-round btn-sm btn-primary">{{ __('Add Supervisor') }}</a>
                     </div>
                   </div>
                 @endcan
