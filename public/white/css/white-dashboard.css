@@ -14520,7 +14520,7 @@ fieldset[disabled] .btn-link.active {
 }
 
 .icon-lg+.icon-text {
-  width: calc(100% - $icon-size-lg - 1);
+  /*width: calc(100% - $icon-size-lg - 1);*/
 }
 
 .icon-sm {
@@ -14534,7 +14534,7 @@ fieldset[disabled] .btn-link.active {
 }
 
 .icon-sm+.icon-text {
-  width: calc(100% - $icon-size-sm - 1);
+  /*width: calc(100% - $icon-size-sm - 1);*/
 }
 
 .icon-shape {
