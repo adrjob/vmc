@@ -27,10 +27,22 @@
 {{--  </div>--}}
 {{--</footer>--}}
 
+<style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 98.6%;
+        background-color: #459a61;
+        height: 10px;
+        color: white !important;
+    }
+</style>
+
 <footer class="footer">
     <div class="container-fluid">
-        <div class="copyright text-center">
-            <a href="https://www.vanuatumuslimcenter.com" target="_blank">Vanuatu Muslim Center</a>
+        <div class=" text-center" style="margin-right: -10%">
+            <a href="https://www.vanuatumuslimcenter.com" style="color: white" target="_blank">Vanuatu Muslim Center</a>
             ©
             <script>
                 document.write(new Date().getFullYear())

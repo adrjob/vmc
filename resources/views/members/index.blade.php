@@ -65,7 +65,7 @@
                                     <form action="{{ route('member.destroy', $member) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        
+
                                         <a href="{{ route('member.edit', $member) }}" class="btn btn-link btn-primary btn-icon btn-sm edit"><i class="tim-icons icon-pencil"></i></a>
 
 
