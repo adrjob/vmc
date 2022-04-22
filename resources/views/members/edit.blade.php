@@ -27,13 +27,6 @@
                   <label class="col-sm-2 col-form-label">{{ __('Profile photo') }}</label>
                   <div class="col-sm-7">
                     <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-{{--                      <div class="fileinput-new thumbnail img-circle">--}}
-{{--                        @if ($user->picture)--}}
-{{--                          <img src="{{ $user->profilePicture() }}" alt="...">--}}
-{{--                        @else--}}
-{{--                          <img src="{{ asset('white') }}/img/placeholder.jpg" alt="...">--}}
-{{--                        @endif--}}
-{{--                      </div>--}}
                       <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
                       <div>
                         <span class="btn btn-round btn-file btn-sm btn-primary">
@@ -89,8 +82,70 @@
               </div>
             </div>
           </form>
+
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-title">{{ __('Meetings') }}</h4>
+                </div>
+                <div class="card-body ">
+
+                    <div class="table-responsive">
+                        <table id="datatables" class="table table-striped table-no-bordered table-hover" style="display:none">
+                            <thead class="text-primary">
+                            <th>
+                                {{ __('Name') }}
+                            </th>
+                            <th>
+                                {{ __('Description') }}
+                            </th>
+                            <th>
+                                {{ __('Date') }}
+                            </th>
+                            </thead>
+                            <tbody>
+                            @foreach($meetings as $meeting)
+                                    <tr>
+                                        <td>
+                                            {{ $member->meetingName($member->id) }}
+                                        </td>
+                                        <td>
+                                            {{ $member->meetingDesc($member->id) }}
+                                        </td>
+                                        <td>
+                                            {{ $member->meetingDate($member->id) }}
+                                        </td>
+                                    </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
       </div>
     </div>
   </div>
 @endsection
+
+
+@push('js')
+    <script>
+        $(document).ready(function() {
+            $('#datatables').fadeIn(1100);
+            $('#datatables').DataTable({
+                "pagingType": "full_numbers",
+                "lengthMenu": [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, "All"]
+                ],
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Search Meeting",
+                },
+            });
+        });
+    </script>
+@endpush
+

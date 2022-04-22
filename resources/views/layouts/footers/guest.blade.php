@@ -1,6 +1,6 @@
 <footer class="footer">
   <div class="container-fluid">
-    <div class="copyright text-center">
+    <div class="text-center">
       <a href="https://www.vanuatumuslimcenter.com" target="_blank">Vanuatu Muslim Center</a>
         ©
         <script>

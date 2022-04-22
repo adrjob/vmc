@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\AddParticipant;
+use App\Meetings;
 use App\Member;
 use Illuminate\Http\Request;
 
@@ -76,7 +78,9 @@ class MemberController extends Controller
      */
     public function edit(Member $member)
     {
-        return view('members.edit', compact('member'));
+        $meetings = AddParticipant::where('m_member_id', $member->id)->get();
+
+        return view('members.edit', compact('member', 'meetings'));
     }
 
     /**
