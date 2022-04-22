@@ -13,9 +13,8 @@
         @csrf
 
         <div class="card card-login card-white" style="margin-top: 20%">
-          <div class="card-header" style="padding: 0 !important;">
-            <h1 class="card-title" style="color: #459a61; font-family: Arial; font-size: 26px; text-transform: initial !important; text-align: center; padding-top: 10px">{{ __('Log in') }}</h1>
-          </div>
+            <img src="{{ asset("white") }}/img/new-logo.png" style="width: 130px; margin-left: 30%; margin-top: 10px">
+
           <div class="card-body" style="padding-bottom: 0 !important;">
             <div class="form-group mb-0 {{ $errors->has('email') ? ' has-danger' : '' }}">
               <div class="input-group">
