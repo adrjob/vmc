@@ -99,6 +99,7 @@ class MemberController extends Controller
         $data->gender = $request->gender;
         $data->email = $request->email;
         $data->phone = $request->phone;
+        $data->picture = $request->photo ? $request->photo->store('member', 'public') : null;
 
         if($data->save())
         {

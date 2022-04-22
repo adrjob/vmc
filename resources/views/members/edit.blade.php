@@ -23,23 +23,30 @@
                       <a href="{{ route('member.index') }}" class="btn btn-round btn-sm btn-primary">{{ __('Back to list') }}</a>
                   </div>
                 </div>
-                <div class="row">
-                  <label class="col-sm-2 col-form-label">{{ __('Profile photo') }}</label>
-                  <div class="col-sm-7">
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                      <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
-                      <div>
-                        <span class="btn btn-round btn-file btn-sm btn-primary">
+                  <div class="row">
+                      <label class="col-sm-2 col-form-label">{{ __('Profile photo') }}</label>
+                      <div class="col-sm-7">
+                          <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                              <div class="fileinput-new thumbnail img-circle">
+                                  @if ($member->picture)
+                                      <img src="{{ $member->profilePictureMember() }}" alt="...">
+                                  @else
+                                      <img src="{{ asset('white') }}/img/placeholder.jpg" alt="...">
+                                  @endif
+                              </div>
+                              <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
+                              <div>
+                        <span class="btn btn-round btn-file">
                           <span class="fileinput-new">{{ __('Select image') }}</span>
                           <span class="fileinput-exists">{{ __('Change') }}</span>
                           <input type="file" name="photo" id = "input-picture" />
                         </span>
-                          <a href="#pablo" class="btn btn-danger fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> {{ __('Remove') }}</a>
+                                  <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> {{ __('Remove') }}</a>
+                              </div>
+                              @include('alerts.feedback', ['field' => 'photo'])
+                          </div>
                       </div>
-                      @include('alerts.feedback', ['field' => 'photo'])
-                    </div>
                   </div>
-                </div>
                 <!-- Row 1 -->
                 <div class="row">
                   <div class="col">

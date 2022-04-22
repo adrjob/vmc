@@ -27,4 +27,12 @@ class Member extends Model
         echo $mname->m_date;
     }
 
+    public function profilePictureMember()
+    {
+        if ($this->picture) {
+            return "/storage/{$this->picture}";
+        }
+        return asset('white')."/img/favicon.png";
+    }
+
 }
