@@ -225,7 +225,6 @@
                 </div>
                 <input type="hidden" name="m_id" value="{{ $meeting->id }}">
                 <div class="modal-body">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
                     <select class="form-control" id="exampleFormControlSelect2" name="m_member_id">
                         @foreach($members as $member)
                             <option value="{{ $member->id }}">{{ $member->name }}</option>
