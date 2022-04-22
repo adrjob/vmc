@@ -4,7 +4,7 @@
     <i class="tim-icons icon-bullet-list-67 visible-on-sidebar-mini text-muted"></i>
   </button>
 </div>
-<div class="sidebar" data="green">
+<div class="sidebar" data="green" style="    height: 83% !important;">
   <!--
     Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
 -->
